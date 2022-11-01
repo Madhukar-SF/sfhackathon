@@ -1,101 +1,189 @@
-<div> 
-
 <div>
-    <div class="vsc-controller"></div>
-    <video width="270" controls="" class="">
-        <source src="https://github.com/Madhukar-SF/sfhackathon/raw/main/img/video.mp4" type="video/mp4">
-    </video>
-</div>
 
 
-<style>
-    /* Button used to open the chat form - fixed at the bottom of the page */
-    .open-button {
-        border: none;
-        cursor: pointer;
-        position: fixed;
-        bottom: 23px;
-        right: 28px;
-        width: 200px;
-    }
+    <!----   Video -->
 
-    /* The popup chat - hidden by default */
-    .chat-popup {
-        display: none;
-        position: fixed;
-        bottom: 0;
-        right: 15px;
-        border: 3px solid #f1f1f1;
-        z-index: 9;
-    }
-
-    /* Add styles to the form container */
-    .form-container {
-        max-width: 300px;
-        padding: 10px;
-        background-color: white;
-    }
-
-    /* Full-width textarea */
-    .form-container textarea {
-        width: 100%;
-        padding: 15px;
-        margin: 5px 0 22px 0;
-        border: none;
-        background: #f1f1f1;
-        resize: none;
-        min-height: 200px;
-    }
-
-    /* When the textarea gets focus, do something */
-    .form-container textarea:focus {
-        background-color: #ddd;
-        outline: none;
-    }
-
-    /* Set a style for the submit/send button */
-    .form-container .btn {
-        background-color: #0070d2;
-        color: white;
-        padding: 16px 20px;
-        border: none;
-        cursor: pointer;
-        width: 100%;
-        margin-bottom: 10px;
-        opacity: 0.8;
-    }
-
-    /* Add a red background color to the cancel button */
-    .form-container .cancel {
-        background-color: red;
-    }
-
-    /* Add some hover effects to buttons */
-    .form-container .btn:hover,
-    .open-button:hover {
-        opacity: 1;
-    }
-</style>
-
-<button class="open-button" onclick="openForm()"> 
-        <img src="https://raw.githubusercontent.com/Madhukar-SF/sfhackathon/main/img/help.jpg" alt="chat now"/>
-</button>
+    <div>
+        <div class="vsc-controller"></div>
+        <video width="100%" controls="" class="">
+            <source src="https://github.com/Madhukar-SF/sfhackathon/raw/main/img/video.mp4" type="video/mp4">
+        </video>
+    </div>
 
 
 
-<div class="chat-popup" id="myForm">
-    <img src="https://raw.githubusercontent.com/Madhukar-SF/sfhackathon/main/img/help-popup.jpg" alt="chat now"/>
-</div>
+
+    <!----   Ask -->
+
+    <style>
+        #myImg {
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
 
 
-<script>
-    function openForm() {
-        document.getElementById("myForm").style.display = "block";
-    }
 
-    function closeForm() {
-        document.getElementById("myForm").style.display = "none";
-    }
-</script>
+        /* The Modal (background) */
+        .modal1 {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            padding-top: 500px;
+            /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Black w/ opacity */
+        }
+
+        /* modal1 Content (image) */
+        .modal1-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+
+
+        /* The Close Button */
+        .close1 {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close1:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* 100% Image Width on Smaller Screens */
+        @media only screen and (max-width: 700px) {
+            .modal1-content {
+                width: 100%;
+            }
+        }
+    </style>
+    <img id="myImg" src="https://raw.githubusercontent.com/Madhukar-SF/sfhackathon/main/img/ask2.jpg"
+        style="width:100%;max-width:300px" onclick="myImg_onclick()">
+
+    <!-- The modal1 -->
+    <div id="myModal" class="modal1">
+        <img class="modal1-content" id="img01" onclick="myModal_onclick()">
+    </div>
+
+    <script>
+        // Get the modal1
+        // Get the image and insert it inside the modal1 - use its "alt" text as a caption
+        function myImg_onclick() {
+            var modal1 = document.getElementById("myModal");
+            modal1.style.display = "block";
+            var modalImg = document.getElementById("img01");
+            modalImg.src = "https://raw.githubusercontent.com/Madhukar-SF/sfhackathon/main/img/popup.jpg";
+        }
+
+
+        // When the user clicks on <span> (x), close the modal1
+        function myModal_onclick() {
+            var modal1 = document.getElementById("myModal");
+            modal1.style.display = "none";
+        }
+    </script>
+
+
+
+
+    <!----   Chat -->
+
+
+    <style>
+        /* The Modal (background) */
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: #474e5d;
+            padding-top: 50px;
+        }
+
+
+        /* Button used to open the chat form - fixed at the bottom of the page */
+        .open-button {
+            border: none;
+            cursor: pointer;
+            position: fixed;
+            bottom: 23px;
+            right: 28px;
+            width: 200px;
+        }
+
+        /* The popup chat - hidden by default */
+        .chat-popup {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            right: 15px;
+            border: 3px solid #f1f1f1;
+            z-index: 9;
+        }
+
+        /* Add some hover effects to buttons */
+        .form-container .btn:hover,
+        .open-button:hover {
+            opacity: 1;
+        }
+    </style>
+
+    <button class="open-button" onclick="openForm()">
+        <img src="https://raw.githubusercontent.com/Madhukar-SF/sfhackathon/main/img/help.jpg" alt="chat now" />
+    </button>
+
+
+
+    <div class="chat-popup" id="myForm">
+        <img src="https://raw.githubusercontent.com/Madhukar-SF/sfhackathon/main/img/help-popup.jpg" alt="chat now"
+            onclick="closeForm()" />
+    </div>
+
+
+    <script>
+        function openForm() {
+            document.getElementById("myForm").style.display = "block";
+        }
+
+        function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+        }
+    </script>
 
 </div>
