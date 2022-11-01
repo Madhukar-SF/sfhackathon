@@ -23,7 +23,6 @@
         }
 
 
-
         /* The Modal (background) */
         .modal1 {
             display: none;
@@ -91,25 +90,7 @@
         <img class="modal1-content" id="img01" onclick="myModal_onclick()">
     </div>
 
-    <script>
-        // Get the modal1
-        // Get the image and insert it inside the modal1 - use its "alt" text as a caption
-        function myImg_onclick() {
-            var modal1 = document.getElementById("myModal");
-            modal1.style.display = "block";
-            var modalImg = document.getElementById("img01");
-            modalImg.src = "https://raw.githubusercontent.com/Madhukar-SF/sfhackathon/main/img/popup.jpg";
-        }
-
-
-        // When the user clicks on <span> (x), close the modal1
-        function myModal_onclick() {
-            var modal1 = document.getElementById("myModal");
-            modal1.style.display = "none";
-        }
-    </script>
-
-
+  
 
 
     <!----   Chat -->
@@ -177,6 +158,22 @@
 
 
     <script>
+                // Get the modal1
+        // Get the image and insert it inside the modal1 - use its "alt" text as a caption
+        function myImg_onclick() {
+            var modal1 = document.getElementById("myModal");
+            modal1.style.display = "block";
+            var modalImg = document.getElementById("img01");
+            modalImg.src = "https://raw.githubusercontent.com/Madhukar-SF/sfhackathon/main/img/popup.jpg";
+        }
+
+
+        // When the user clicks on <span> (x), close the modal1
+        function myModal_onclick() {
+            var modal1 = document.getElementById("myModal");
+            modal1.style.display = "none";
+        }
+
         function openForm() {
             document.getElementById("myForm").style.display = "block";
         }
